@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-// import Main from './Main';
+import Main from './Main';
 import background from "./images/background.jpg";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <div style={{ backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "100vh" }} >
         <div className="container">
-          {/* <Main /> */}
+          <Main />
         </div>
       </div>
     </>
