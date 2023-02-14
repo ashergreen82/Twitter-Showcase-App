@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Main from './Main';
-import background from "./images/background.jpg";
+import background from "./images/alexander-shatov-SXfwXS0jWNg-unsplash.jpg";
 
 function App() {
   return (
