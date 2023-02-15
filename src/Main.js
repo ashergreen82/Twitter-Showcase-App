@@ -33,7 +33,7 @@ function mainNavBar() {
                     </ul>
                 </div>
             </nav>
-            <div className="text-center">
+            <div className="main_header text-center">
                 <h1 className="h2">WELCOME TO</h1>
                 <h1 className="h1">THE SHOWCASE TWITTER APP</h1>
             </div>
