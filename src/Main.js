@@ -21,7 +21,7 @@ function mainNavBar() {
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col-8">
                             <form className="d-flex flex-row flex-nowrap m-0 p-0">
-                                <input className="form-control col-8" type="search" placeholder="Search" aria-label="Search" />
+                                <input className="form-control col-8" type="search" placeholder="Enter your twitter search here" aria-label="Search" />
                                 <button className="btn col-4 btn-outline-success" type="submit">Search</button>
                             </form>
                             {/* <a className="nav-link" href="#">Search</a> */}
@@ -37,6 +37,7 @@ function mainNavBar() {
                 <h1 className="h2">WELCOME TO</h1>
                 <h1 className="h1">THE SHOWCASE TWITTER APP</h1>
             </div>
+            <p className="body_text text-justify">Just enter your search in the serarch bar above and we will sarch twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
         </>
 
     )
