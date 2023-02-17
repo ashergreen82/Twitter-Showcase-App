@@ -1,17 +1,18 @@
 import React from 'react';
 import Randomsearch from "./Randomsearch";
 import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 // import axios from 'axios';
 
 // import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function MainNavBar() {
 
-    const [showRandomSearch, setShowRandomSearch] = useState(false);
+    // const [showRandomSearch, setShowRandomSearch] = useState(false);
 
-    const handleRandomSearchClick = () => {
-        setShowRandomSearch(true);
-    };
+    // const handleRandomSearchClick = () => {
+    //     setShowRandomSearch(true);
+    // };
 
     return (
         <>
@@ -23,7 +24,7 @@ function MainNavBar() {
                 <div className="collapse navbar-collapse w-100" id="navbarNav">
                     <ul className="navbar-nav d-flex flex-row w-100 justify-content-between">
                         <li className="nav-item col">
-                            <a className="nav-link" href="#">Main</a>
+                            <Link className="nav-link" to="/Main">Main</Link>
                         </li>
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col-8">
@@ -35,7 +36,7 @@ function MainNavBar() {
                         </li>
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col">
-                            <a className="nav-link" href="#" onClick={() => setShowRandomSearch(true)}>Random Search</a>
+                            <Link className="nav-link" to="/Randomsearch">Random Search</Link>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +46,7 @@ function MainNavBar() {
                 <h1 className="h1">THE SHOWCASE TWITTER APP</h1>
             </div>
             <p className="body_text text-justify">Just enter your search in the search bar above and we will search the last 7 days on twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
-            {showRandomSearch && <Randomsearch />}
+            {/* {showRandomSearch && <Randomsearch />} */}
         </>
 
     );
