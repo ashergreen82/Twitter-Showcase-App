@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
 import Main from './Main';
-// import background from "./images/alexander-shatov-SXfwXS0jWNg-unsplash.jpg";
-import background from "./images/alexander-shatov-k1xf2D7jWUs-unsplash.jpg";
+import background from "./images/alexander-shatov-SXfwXS0jWNg-unsplash.jpg";
+// import background from "./images/alexander-shatov-k1xf2D7jWUs-unsplash.jpg";
 
 function App() {
   return (

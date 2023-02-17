@@ -1,10 +1,17 @@
 import React from 'react';
-// import { useEffect, useState } from 'react';
+import Randomsearch from "./Randomsearch";
+import { useEffect, useState } from 'react';
 // import axios from 'axios';
 
 // import { Navbar, Nav, Container } from 'react-bootstrap';
 
-function mainNavBar() {
+function MainNavBar() {
+
+    const [showRandomSearch, setShowRandomSearch] = useState(false);
+
+    const handleRandomSearchClick = () => {
+        setShowRandomSearch(true);
+    };
 
     return (
         <>
@@ -28,7 +35,7 @@ function mainNavBar() {
                         </li>
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col">
-                            <a className="nav-link" href="#">Random Search</a>
+                            <a className="nav-link" href="#" onClick={() => setShowRandomSearch(true)}>Random Search</a>
                         </li>
                     </ul>
                 </div>
@@ -37,10 +44,11 @@ function mainNavBar() {
                 <h1 className="h2">WELCOME TO</h1>
                 <h1 className="h1">THE SHOWCASE TWITTER APP</h1>
             </div>
-            <p className="body_text text-justify">Just enter your search in the search bar above and we will sarch twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
+            <p className="body_text text-justify">Just enter your search in the search bar above and we will search the last 7 days on twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
+            {showRandomSearch && <Randomsearch />}
         </>
 
-    )
+    );
 }
 
-export default mainNavBar;
+export default MainNavBar;
