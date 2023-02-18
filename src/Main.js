@@ -24,7 +24,7 @@ function MainNavBar() {
                 <div className="collapse navbar-collapse w-100" id="navbarNav">
                     <ul className="navbar-nav d-flex flex-row w-100 justify-content-between">
                         <li className="nav-item col">
-                            <Link className="nav-link" to="/Main">Main</Link>
+                            <Link className="nav-link" to="/">Main</Link>
                         </li>
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col-8">

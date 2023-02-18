@@ -20,6 +20,7 @@ function App() {
       }} >
         <div className="App">
           <Routes>
+            <Route path="/" element={<Main />} />
             <Route path="/Main" element={<Main />} />
             <Route path="/Randomsearch" element={<Randomsearch />} />
             {/* <Route path="contact" element={<Contact />} /> */}
