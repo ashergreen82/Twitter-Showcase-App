@@ -58,19 +58,11 @@ function randomSearch() {
                 </div>
             </nav>
             <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
-            <div>
+            <div style={{ display: 'flex' }}>
                 <img src={robertSawyer} alt="Image" width="100" height="100" onClick={handleRobertJ} />
-            </div>
-            <div>
                 <img src={arnold} alt="Image" width="100" height="100" onClick={handleArnold} />
-            </div>
-            <div>
                 <img src={arlene} alt="Image" width="100" height="100" onClick={handleArlene} />
-            </div>
-            <div>
                 <img src={robertKiyosaki} alt="Image" width="100" height="100" onClick={handleKiyosaki} />
-            </div>
-            <div>
                 <img src={dalaiLama} alt="Image" width="100" height="100" onClick={handleDalai} />
             </div>
         </>
