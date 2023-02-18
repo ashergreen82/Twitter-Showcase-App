@@ -2,6 +2,7 @@ import React from 'react';
 import Randomsearch from "./Randomsearch";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import mainPicture from "./images/Inspired_motivational_Quotes-Small.png";
 // import axios from 'axios';
 
 // import { Navbar, Nav, Container } from 'react-bootstrap';
@@ -47,6 +48,7 @@ function MainNavBar() {
             </div>
             <p className="body_text text-justify">Just enter your search in the search bar above and we will search the last 7 days on twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
             {/* {showRandomSearch && <Randomsearch />} */}
+            <img src={mainPicture} alt="Logo" className="w-10" />
         </>
 
     );
