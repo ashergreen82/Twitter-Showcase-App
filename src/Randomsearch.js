@@ -30,6 +30,14 @@ function randomSearch() {
     const handleDalai = () => {
         console.log('Dalai Lama random tweet will go here!!');
     };
+
+    const imageStyle = {
+        // width: "315",
+        // height: "625",
+        width: "315px",
+        height: "625px",
+    };
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -58,12 +66,13 @@ function randomSearch() {
                 </div>
             </nav>
             <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
-            <div style={{ display: 'flex' }}>
-                <img src={robertSawyer} alt="Image" width="100" height="100" onClick={handleRobertJ} />
-                <img src={arnold} alt="Image" width="100" height="100" onClick={handleArnold} />
-                <img src={arlene} alt="Image" width="100" height="100" onClick={handleArlene} />
-                <img src={robertKiyosaki} alt="Image" width="100" height="100" onClick={handleKiyosaki} />
-                <img src={dalaiLama} alt="Image" width="100" height="100" onClick={handleDalai} />
+            {/* <div className="d-flex justify-content-around"> */}
+            <div className="d-flex justify-content-evenly">
+                <img src={robertSawyer} alt="robert J Sawyer" style={imageStyle} onClick={handleRobertJ} />
+                <img src={arnold} alt="Arnold Schwarnegger" style={imageStyle} onClick={handleArnold} />
+                <img src={arlene} alt="Arlene Dickinson" style={imageStyle} onClick={handleArlene} />
+                <img src={robertKiyosaki} alt="Robert Kiyosaki" style={imageStyle} onClick={handleKiyosaki} />
+                <img src={dalaiLama} alt="Dalai Lama" style={imageStyle} onClick={handleDalai} />
             </div>
         </>
     )
