@@ -1,5 +1,7 @@
 import React from "react";
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import Navbar from './Navbar';
 import robertSawyer from "./images/Robert_j_sawyer_in_2005.jpg";
 import arnold from "./images/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg";
 import arlene from "./images/Arlene_Dickinson_2021.jpg";
@@ -7,14 +9,16 @@ import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
 import dalaiLama from "./images/Dalailama1.jpg";
 
 function randomSearch() {
-    // function PictureButton(props) {
-    //     return (
-    //         <Button variant="primary">
-    //             <Image src="./images/Robert_j_sawyer_in_2005.jpg" alt="button image" width={30} height={30} roundedCircle className="mr-2" />
-    //             Click me
-    //         </Button>
-    //     );
+    // const [searchValueRandom, setSearchValueRandom] = useState("");
+
+    // function handleSearchInputChangeRandom(event) {
+    //     setSearchValueRandom(event.target.value);
     // }
+
+    // function handleSearchButtonClickRandom() {
+    //     console.log("Search button clicked with search value:", searchValueRandom);
+    // }
+
     const handleRobertJ = () => {
         console.log('Robert J. Sawyer random tweet will go here!');
     };
@@ -38,7 +42,7 @@ function randomSearch() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a className="navbar-brand" href="#"></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -48,20 +52,23 @@ function randomSearch() {
                         <li className="nav-item col">
                             <Link className="nav-link" to="/">Main</Link>
                         </li>
-                        {/* <div className="vr mx-5"></div> */}
+                        <div className="vr mx-5"></div>
                         <li className="nav-item col-8">
                             <form className="d-flex flex-row justify-content-evenly m-0 p-0">
-                                <input className="form-control w-75" type="search" placeholder="Enter your twitter search here" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
+                                <input className="form-control w-75" type="search" placeholder="Enter your twitter search here" aria-label="Search" value={searchValueRandom} onChange={handleSearchInputChangeRandom} />
+                                <button className="btn btn-outline-success" type="submit" onClick={handleSearchButtonClickRandom}>Search</button>
                             </form>
-                            {/* <a className="nav-link" href="#">Search</a> */}
+                            <a className="nav-link" href="#">Search</a>
                         </li>
-                        {/* <div className="vr mx-5"></div> */}
+                        <div className="vr mx-5"></div>
                         <li className="nav-item col">
                             <Link className="nav-link" to="/Randomsearch">Random Search</Link>
                         </li>
                     </ul>
                 </div>
+            </nav> */}
+            <nav>
+                <Navbar />
             </nav>
             <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
             {/* <div className="d-flex justify-content-around"> */}
