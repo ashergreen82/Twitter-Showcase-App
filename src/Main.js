@@ -17,11 +17,8 @@ function MainNavBar() {
 
     function handleSearchButtonClick() {
         console.log("Search button clicked with search value:", searchValue);
-
-        // function searchButton() {
-        //     console.log("Search Button clicked");
-        // }
     }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
