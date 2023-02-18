@@ -9,12 +9,19 @@ import mainPicture from "./images/Inspired_motivational_Quotes-Small.png";
 
 function MainNavBar() {
 
-    // const [showRandomSearch, setShowRandomSearch] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
 
-    // const handleRandomSearchClick = () => {
-    //     setShowRandomSearch(true);
-    // };
+    function handleSearchInputChange(event) {
+        setSearchValue(event.target.value);
+    }
 
+    function handleSearchButtonClick() {
+        console.log("Search button clicked with search value:", searchValue);
+
+        // function searchButton() {
+        //     console.log("Search Button clicked");
+        // }
+    }
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,8 +37,8 @@ function MainNavBar() {
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col-8">
                             <form className="d-flex flex-row justify-content-evenly m-0 p-0">
-                                <input className="form-control w-75" type="search" placeholder="Enter your twitter search here" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
+                                <input className="form-control w-75" type="search" placeholder="Enter your twitter search here" aria-label="Search" value={searchValue} onChange={handleSearchInputChange} />
+                                <button className="btn btn-outline-success" type="submit" onClick={handleSearchButtonClick}>Search</button>
                             </form>
                             {/* <a className="nav-link" href="#">Search</a> */}
                         </li>

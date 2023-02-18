@@ -32,8 +32,6 @@ function randomSearch() {
     };
 
     const imageStyle = {
-        // width: "315",
-        // height: "625",
         width: "315px",
         height: "625px",
     };
