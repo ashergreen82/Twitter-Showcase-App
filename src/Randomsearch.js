@@ -1,12 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import roberSawyer from "./images/Robert_j_sawyer_in_2005.jpg";
+import robertSawyer from "./images/Robert_j_sawyer_in_2005.jpg";
 import arnold from "./images/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg";
 import arlene from "./images/Arlene_Dickinson_2021.jpg";
 import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
 import dalaiLama from "./images/Dalailama1.jpg";
 
 function randomSearch() {
+    // function PictureButton(props) {
+    //     return (
+    //         <Button variant="primary">
+    //             <Image src="./images/Robert_j_sawyer_in_2005.jpg" alt="button image" width={30} height={30} roundedCircle className="mr-2" />
+    //             Click me
+    //         </Button>
+    //     );
+    // }
+    const handleRobertJ = () => {
+        console.log('Robert J. Sawyer random tweet will go here!');
+    };
+    const handleArnold = () => {
+        console.log('Arnold S random tweet will go here!');
+    };
+    const handleArlene = () => {
+        console.log('Arlene random tweet will go here!');
+    };
+    const handleKiyosaki = () => {
+        console.log('Kiyosaki random tweet will go here!');
+    };
+    const handleDalai = () => {
+        console.log('Dalai Lama random tweet will go here!!');
+    };
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,6 +58,21 @@ function randomSearch() {
                 </div>
             </nav>
             <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
+            <div>
+                <img src={robertSawyer} alt="Image" width="100" height="100" onClick={handleRobertJ} />
+            </div>
+            <div>
+                <img src={arnold} alt="Image" width="100" height="100" onClick={handleArnold} />
+            </div>
+            <div>
+                <img src={arlene} alt="Image" width="100" height="100" onClick={handleArlene} />
+            </div>
+            <div>
+                <img src={robertKiyosaki} alt="Image" width="100" height="100" onClick={handleKiyosaki} />
+            </div>
+            <div>
+                <img src={dalaiLama} alt="Image" width="100" height="100" onClick={handleDalai} />
+            </div>
         </>
     )
 }
