@@ -1,5 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import roberSawyer from "./images/Robert_j_sawyer_in_2005.jpg";
+import arnold from "./images/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg";
+import arlene from "./images/Arlene_Dickinson_2021.jpg";
+import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
+import dalaiLama from "./images/Dalailama1.jpg";
 
 function randomSearch() {
     return (
@@ -29,7 +34,7 @@ function randomSearch() {
                     </ul>
                 </div>
             </nav>
-            <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to randomly search tweets from any of these people.</p>
+            <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
         </>
     )
 }
