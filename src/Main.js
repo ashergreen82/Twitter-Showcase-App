@@ -10,7 +10,7 @@ import Navbar from './Navbar';
 
 function Main() {
 
-    // const [searchValue, setSearchValue] = useState("");
+    const [data, setData] = useState([{}]);
 
     // function handleSearchInputChange(event) {
     //     setSearchValue(event.target.value);
@@ -19,6 +19,15 @@ function Main() {
     // function handleSearchButtonClick() {
     //     console.log("Search button clicked with search value:", searchValue);
     // }
+    useEffect(() => {
+        console.log("useEffect was executed")
+        fetch("/api")
+            .then(res => res.json())
+            .then(data => {
+                setData(data)
+                console.log(data)
+            })
+    }, []);
 
     return (
         <>
