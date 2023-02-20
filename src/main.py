@@ -5,6 +5,7 @@ import json
 from io import BytesIO
 from PIL import Image
 from dotenv import load_dotenv
+from flask import jsonify
 load_dotenv()
 
 app = Flask(__name__)
@@ -14,7 +15,7 @@ app = Flask(__name__)
 def getTweets():
     url = "https://api.twitter.com/1.1/search/tweets.json"
     payload = {
-        "q": "WBrettWilson",
+        "q": "Schwarzenegger",
         "count": "10"
     }
     headers = {
@@ -26,7 +27,27 @@ def getTweets():
     # with open(filename, "w") as f:
     #     json.dump(dict, f)
     # print(dict)
-    tweet_count = 1
+    tweets = []
+    for tweet in tweet_data['statuses']:
+        full_text = tweet['text']
+        username = tweet['user']['screen_name']
+        retweet_count = tweet['retweet_count']
+        favorite_count = tweet['favorite_count']
+        images = []
+        if 'media' in tweet['entities']:
+            for media in tweet['entities']['media']:
+                images.append(media['media_url'])
+
+        tweet_dict = {
+            'full_text': full_text,
+            'username': username,
+            'retweet_count': retweet_count,
+            'favorite_count': favorite_count,
+            'images': images
+        }
+        tweets.append(tweet_dict)
+
+    tweet_count = 0
     for tweet in tweet_data['statuses']:
         full_text = tweet['text']
         username = tweet['user']['screen_name']
@@ -51,7 +72,7 @@ def getTweets():
         else:
             print("Image: No Image\n")
         tweet_count += 1
-    return tweet_data
+    return jsonify(tweets)
 
 
 if __name__ == "__main__":
