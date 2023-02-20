@@ -1,6 +1,7 @@
 from flask import Flask
 import requests
 import os
+import json
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -11,14 +12,18 @@ app = Flask(__name__)
 def getTweets():
     url = "https://api.twitter.com/1.1/search/tweets.json"
     payload = {
-        "q": "elonmusk",
-        "count": "2"
+        "q": "@WBrettWilson",
+        "count": "10"
     }
     headers = {
         "Authorization": "Bearer " + os.environ.get("API_KEY")
     }
     response = requests.request("GET", url, headers=headers, data=payload)
     dict = response.json()
+    filename = "@WBrettWilson.json"
+    # with open(filename, "w") as f:
+    #     json.dump(dict, f)
+    # print(dict)
     return dict
 
 
