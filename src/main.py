@@ -13,14 +13,14 @@ def getTweets():
     url = "https://api.twitter.com/1.1/search/tweets.json"
     payload = {
         "q": "@WBrettWilson",
-        "count": "10"
+        "count": "2"
     }
     headers = {
         "Authorization": "Bearer " + os.environ.get("API_KEY")
     }
     response = requests.request("GET", url, headers=headers, data=payload)
     dict = response.json()
-    filename = "@WBrettWilson.json"
+    filename = "@WBrettWilson2count.json"
     # with open(filename, "w") as f:
     #     json.dump(dict, f)
     # print(dict)
