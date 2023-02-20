@@ -1,5 +1,8 @@
 from flask import Flask
 import requests
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -11,8 +14,10 @@ def getTweets():
         "q": "elonmusk",
         "count": "2"
     }
+    print(os.environ.get("API_KEY"))
+    print(os.environ)
     headers = {
-        "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAPly9QAAAAAAOgF9A%2Ff1SJN0O0utkX%2BNF%2B41TkM%3D5He51JIFSZ0dt3Do4oJM3dG7qu3XJ3Lqqych9p6olrbt016GTi"
+        "Authorization": "Bearer " + os.environ.get("API_KEY")
     }
     response = requests.request("GET", url, headers=headers, data=payload)
     dict = response.json()
