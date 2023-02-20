@@ -14,8 +14,6 @@ def getTweets():
         "q": "elonmusk",
         "count": "2"
     }
-    print(os.environ.get("API_KEY"))
-    print(os.environ)
     headers = {
         "Authorization": "Bearer " + os.environ.get("API_KEY")
     }
