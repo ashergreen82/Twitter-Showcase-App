@@ -12,6 +12,24 @@ function NavBar() {
 
     function handleSearchButtonClick() {
         console.log("Search button clicked with search value:", searchValue);
+        fetch('/api/search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                query: searchValue
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // do something with the response data
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        console.log("Data Received")
     }
     return (
         <>
