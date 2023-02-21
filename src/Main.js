@@ -19,6 +19,7 @@ function Main() {
     // function handleSearchButtonClick() {
     //     console.log("Search button clicked with search value:", searchValue);
     // }
+
     useEffect(() => {
         console.log("useEffect was executed")
         fetch("/api")
@@ -57,7 +58,10 @@ function Main() {
                 </div>
             </nav> */}
             <div>
-                <Navbar />
+                <Navbar
+                    data={data}
+                    setData={setData}
+                />
             </div>
             <div className="main_header text-center">
                 <h1 className="h2">WELCOME TO</h1>

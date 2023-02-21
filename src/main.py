@@ -77,8 +77,9 @@ def getTweetsTest(query):
 @app.route("/api")
 def getTweets():
     url = "https://api.twitter.com/1.1/search/tweets.json"
+    # query = request.json.get('query')
     payload = {
-        "q": "Schwarzenegger",
+        "q": "elonmusk",
         "count": "10"
     }
     headers = {
@@ -127,10 +128,10 @@ def getTweets():
         print('Favorite Count: ', favorite_count)
         if images:
             print('Image: ', images)
-            for image_url in images:
-                response = requests.get(image_url)
-                img = Image.open(BytesIO(response.content))
-                img.show()
+            # for image_url in images:
+            #     response = requests.get(image_url)
+            #     img = Image.open(BytesIO(response.content))
+            #     img.show()
             print("\n")
         else:
             print("Image: No Image\n")
@@ -138,7 +139,7 @@ def getTweets():
     return jsonify(tweets)
 
 
-@app.route("/api/search", methods=["POST"])
+@app.route("/api/search", methods=["GET"])
 def searchTweets():
     query = request.json.get('query')
     tweets = getTweetsTest(query)

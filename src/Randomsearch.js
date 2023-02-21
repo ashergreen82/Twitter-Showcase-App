@@ -8,7 +8,7 @@ import arlene from "./images/Arlene_Dickinson_2021.jpg";
 import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
 import dalaiLama from "./images/Dalailama1.jpg";
 
-function randomSearch() {
+function randomSearch({ data, setData }) {
     // const [searchValueRandom, setSearchValueRandom] = useState("");
 
     // function handleSearchInputChangeRandom(event) {
@@ -68,7 +68,10 @@ function randomSearch() {
                 </div>
             </nav> */}
             <nav>
-                <Navbar />
+                <Navbar
+                    data={data}
+                    setData={setData}
+                />
             </nav>
             <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
             {/* <div className="d-flex justify-content-around"> */}
