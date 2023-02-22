@@ -14,7 +14,7 @@ startdev.bat
 
 # testing
 /coverage
-/Client/coverage
+/Client/converage
 
 # production
 /build
@@ -27,11 +27,6 @@ startdev.bat
 .env.development.local
 .env.test.local
 .env.production.local
-/Client/src/.env
-/Client/src/.env.local
-/Client/src/.env.development.local
-/Client/src/.env.test.local
-/Client/src/.env.production.local
 
 npm-debug.log*
 yarn-debug.log*
