@@ -30,6 +30,16 @@ function Main() {
             })
     }, []);
 
+    function createSearchResultHTML(result) {
+        return `
+          <li>
+            <a href="${result.url}">${result.title}</a>
+            <p>${result.description}</p>
+          </li>
+        `;
+    }
+
+
     return (
         <>
             {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -61,6 +71,7 @@ function Main() {
                 <Navbar
                     data={data}
                     setData={setData}
+                    searchValue={searchValue}
                 />
             </div>
             <div className="main_header text-center">
@@ -68,8 +79,11 @@ function Main() {
                 <h1 className="h1">THE SHOWCASE TWITTER APP</h1>
             </div>
             <p className="body_text text-justify">Just enter your search in the search bar above and we will search the last 7 days on twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
-            {/* {showRandomSearch && <Randomsearch />} */}
-            <img src={mainPicture} alt="Logo" className="w-10" />
+            {/* <img src={mainPicture} alt="Logo" className="w-10" /> */}
+            {!searchValue && <img src={mainPicture} alt="Logo" className="w-10" />}
+            <ul id="search-results"></ul>
+
+
         </>
 
     );
