@@ -61,15 +61,15 @@ def getTweetsTest(query):
         print('Username: ', username)
         print('Retweet Count: ', retweet_count)
         print('Favorite Count: ', favorite_count)
-        if images:
-            print('Image: ', images)
-            for image_url in images:
-                response = requests.get(image_url)
-                img = Image.open(BytesIO(response.content))
-                img.show()
-            print("\n")
-        else:
-            print("Image: No Image\n")
+        # if images:
+        #     print('Image: ', images)
+        #     for image_url in images:
+        #         response = requests.get(image_url)
+        #         img = Image.open(BytesIO(response.content))
+        #         img.show()
+        #     print("\n")
+        # else:
+        #     print("Image: No Image\n")
         tweet_count += 1
     return jsonify(tweets)
 
@@ -139,7 +139,7 @@ def getTweets():
     return jsonify(tweets)
 
 
-@app.route("/api/search", methods=["GET"])
+@app.route("/api/search", methods=["POST"])
 def searchTweets():
     query = request.json.get('query')
     tweets = getTweetsTest(query)

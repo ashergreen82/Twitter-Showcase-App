@@ -29,8 +29,26 @@ function NavBar({ data, setData }) {
         //         setData(data)
         //         console.log(data)
         //     })
+        // fetch('/api/search', {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         query: searchValue
+        //     })
+        // })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         // do something with the response data
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     });
+        console.log("Search button clicked with search value:", searchValue);
         fetch('/api/search', {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -40,39 +58,13 @@ function NavBar({ data, setData }) {
         })
             .then(response => response.json())
             .then(data => {
+                setData(data)
                 console.log(data);
                 // do something with the response data
             })
             .catch(error => {
                 console.error(error);
             });
-        // fetch('/api/search'), {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         query: searchValue
-        //     })
-        //         //         .then(response => response.json())
-        //         //         .then(data => {
-        //         //             setData(data)
-        //         //             console.log(data)
-        //         //         })
-        //         // };
-        //         .then(response => response.json())
-        //         .then(response => {
-        //             console.log(response);
-        //             return response.json();
-        //         })
-        //         .then(data => {
-        //             setData(data);
-        //             console.log(data);
-        //             // do something with the response data
-        //         })
-        //         .catch(error => {
-        //             console.error(error);
-        //         });
         console.log("Data Received")
     }
     return (
