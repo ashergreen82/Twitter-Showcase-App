@@ -19,16 +19,6 @@ function RandomSearch() {
         }
     }, [searchValue])
 
-    // const [searchValueRandom, setSearchValueRandom] = useState("");
-
-    // function handleSearchInputChangeRandom(event) {
-    //     setSearchValueRandom(event.target.value);
-    // }
-
-    // function handleSearchButtonClickRandom() {
-    //     console.log("Search button clicked with search value:", searchValueRandom);
-    // }
-
     const handleRobertJ = () => {
         console.log('Robert J. Sawyer random tweet will go here!');
     };
