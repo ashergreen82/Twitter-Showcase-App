@@ -8,7 +8,17 @@ import arlene from "./images/Arlene_Dickinson_2021.jpg";
 import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
 import dalaiLama from "./images/Dalailama1.jpg";
 
-function randomSearch({ data, setData }) {
+function RandomSearch() {
+    const [searchValue, setSearchValue] = useState("");
+    const [data, setData] = useState([{}]);
+    const [isSearching, setIsSearching] = useState(false);
+
+    useEffect(() => {
+        if (searchValue === "") {
+            setIsSearching(false);
+        }
+    }, [searchValue])
+
     // const [searchValueRandom, setSearchValueRandom] = useState("");
 
     // function handleSearchInputChangeRandom(event) {
@@ -71,6 +81,10 @@ function randomSearch({ data, setData }) {
                 <Navbar
                     data={data}
                     setData={setData}
+                    setSearchValue={setSearchValue}
+                    searchValue={searchValue}
+                    setIsSearching={setIsSearching}
+                    isSearching={isSearching}
                 />
             </nav>
             <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
@@ -82,8 +96,10 @@ function randomSearch({ data, setData }) {
                 <img src={robertKiyosaki} alt="Robert Kiyosaki" style={imageStyle} onClick={handleKiyosaki} />
                 <img src={dalaiLama} alt="Dalai Lama" style={imageStyle} onClick={handleDalai} />
             </div>
+            {/* {!isSearching && <img src={mainPicture} alt="Logo" className="w-10" />} */}
+            {!isSearching}
         </>
     )
 }
 
-export default randomSearch;
+export default RandomSearch;

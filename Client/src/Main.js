@@ -9,8 +9,9 @@ import Navbar from './Navbar';
 // import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function Main() {
-
+    const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState([{}]);
+    const [isSearching, setIsSearching] = useState(false);
 
     // function handleSearchInputChange(event) {
     //     setSearchValue(event.target.value);
@@ -29,6 +30,12 @@ function Main() {
                 console.log(data)
             })
     }, []);
+
+    useEffect(() => {
+        if (searchValue === "") {
+            setIsSearching(false);
+        }
+    }, [searchValue])
 
     function createSearchResultHTML(result) {
         return `
@@ -71,7 +78,10 @@ function Main() {
                 <Navbar
                     data={data}
                     setData={setData}
+                    setSearchValue={setSearchValue}
                     searchValue={searchValue}
+                    setIsSearching={setIsSearching}
+                    isSearching={isSearching}
                 />
             </div>
             <div className="main_header text-center">
@@ -80,7 +90,7 @@ function Main() {
             </div>
             <p className="body_text text-justify">Just enter your search in the search bar above and we will search the last 7 days on twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
             {/* <img src={mainPicture} alt="Logo" className="w-10" /> */}
-            {!searchValue && <img src={mainPicture} alt="Logo" className="w-10" />}
+            {!isSearching && <img src={mainPicture} alt="Logo" className="w-10" />}
             <ul id="search-results"></ul>
 
 
