@@ -13,14 +13,6 @@ function Main() {
     const [data, setData] = useState([{}]);
     const [isSearching, setIsSearching] = useState(false);
 
-    // function handleSearchInputChange(event) {
-    //     setSearchValue(event.target.value);
-    // }
-
-    // function handleSearchButtonClick() {
-    //     console.log("Search button clicked with search value:", searchValue);
-    // }
-
     useEffect(() => {
         console.log("useEffect was executed")
         fetch("/api")
@@ -45,7 +37,6 @@ function Main() {
           </li>
         `;
     }
-
 
     return (
         <>
