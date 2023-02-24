@@ -18,7 +18,24 @@ function RandomSearch() {
             setIsSearching(false);
         }
     }, [searchValue])
-
+    const displayData = data.map((data, key) => {
+        return (
+            <div key={key}>
+                <h2>Username: {data.username}</h2>
+                <p>Full text: {data.full_text}</p>
+                <p>Images:</p>
+                <ul>
+                    {data.entities?.media &&
+                        data.entities.media.map((media, index) => (
+                            <li key={index}>
+                                <img src={media.media_url_https} alt="tweet media" />
+                            </li>
+                        ))}
+                </ul>
+                <p>Retweet count: {data.retweet_count}</p>
+            </div>
+        );
+    });
     const handleRobertJ = () => {
         console.log('Robert J. Sawyer random tweet will go here!');
     };
@@ -61,6 +78,9 @@ function RandomSearch() {
                 <img src={robertKiyosaki} alt="Robert Kiyosaki" style={imageStyle} onClick={handleKiyosaki} />
                 <img src={dalaiLama} alt="Dalai Lama" style={imageStyle} onClick={handleDalai} />
             </div>}
+            <div>
+                {displayData}
+            </div>
         </>
     )
 }
