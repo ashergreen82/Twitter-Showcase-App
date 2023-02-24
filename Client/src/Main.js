@@ -90,7 +90,7 @@ function Main() {
             </div>
             <p className="body_text text-justify">Just enter your search in the search bar above and we will search the last 7 days on twitter for you.  We also offer a random search as well, so feel free to give that shot.</p>
             {/* <img src={mainPicture} alt="Logo" className="w-10" /> */}
-            {!isSearching && <img src={mainPicture} alt="Logo" className="w-10" />}
+            {!isSearching && <img src={mainPicture} alt="The main picture for this page that somehow went missing." className="w-10" />}
             <ul id="search-results"></ul>
 
 
