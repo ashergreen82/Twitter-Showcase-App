@@ -69,18 +69,21 @@ function RandomSearch() {
                     isSearching={isSearching}
                 />
             </nav>
-            <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
             {/* <div className="d-flex justify-content-around"> */}
-            {!isSearching && <div className="famous_people d-flex justify-content-evenly">
-                <img src={robertSawyer} alt="robert J Sawyer" style={imageStyle} onClick={handleRobertJ} />
-                <img src={arnold} alt="Arnold Schwarnegger" style={imageStyle} onClick={handleArnold} />
-                <img src={arlene} alt="Arlene Dickinson" style={imageStyle} onClick={handleArlene} />
-                <img src={robertKiyosaki} alt="Robert Kiyosaki" style={imageStyle} onClick={handleKiyosaki} />
-                <img src={dalaiLama} alt="Dalai Lama" style={imageStyle} onClick={handleDalai} />
-            </div>}
-            <div>
-                {displayData}
-            </div>
+            {!isSearching ? (
+                <div className="famous_people d-flex justify-content-evenly">
+                    <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
+                    <img src={robertSawyer} alt="robert J Sawyer" style={imageStyle} onClick={handleRobertJ} />
+                    <img src={arnold} alt="Arnold Schwarnegger" style={imageStyle} onClick={handleArnold} />
+                    <img src={arlene} alt="Arlene Dickinson" style={imageStyle} onClick={handleArlene} />
+                    <img src={robertKiyosaki} alt="Robert Kiyosaki" style={imageStyle} onClick={handleKiyosaki} />
+                    <img src={dalaiLama} alt="Dalai Lama" style={imageStyle} onClick={handleDalai} />
+                </div>
+            ) : (
+                <div>
+                    {displayData}
+                </div>
+            )}
         </>
     )
 }
