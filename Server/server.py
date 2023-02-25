@@ -6,6 +6,7 @@ from io import BytesIO
 from PIL import Image
 from dotenv import load_dotenv
 from flask import jsonify
+import random
 load_dotenv()
 
 app = Flask(__name__)
@@ -15,7 +16,7 @@ def getTweetsTest(query):
     url = "https://api.twitter.com/1.1/search/tweets.json"
     payload = {
         "q": query,
-        "count": "7"
+        "count": "20"
     }
     headers = {
         "Authorization": "Bearer " + os.environ.get("API_KEY")
@@ -151,6 +152,7 @@ def searchRandomTweets():
     query = request.json.get('query')
     tweets = getTweetsTest(query)
     # code to select random tweet
+
     return tweets
 
 
