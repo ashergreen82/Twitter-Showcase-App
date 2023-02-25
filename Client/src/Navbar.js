@@ -2,8 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
-function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIsSearching }) {
-
+function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIsSearching, isLoading, setIsLoading }) {
 
     function handleSearchInputChange(event) {
         event.preventDefault();
@@ -22,7 +21,7 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
     function handleSearchButtonClick(event) {
         event.preventDefault();
         setIsSearching(true)
-        console.log("Search button clicked with search value:", searchValue);
+        setIsLoading(true)
         // fetch("/api")
         //     .then(res => res.json())
         //     .then(data => {
@@ -66,6 +65,7 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
                 console.error(error);
             });
         console.log("Data Received")
+        setIsLoading(false)
     }
     return (
         <>

@@ -12,12 +12,15 @@ function RandomSearch() {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState([{}]);
     const [isSearching, setIsSearching] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    let famouseSearchChoice = ""
 
     useEffect(() => {
         if (searchValue === "") {
             setIsSearching(false);
         }
     }, [searchValue])
+
     const displayData = data.map((data, key) => {
         return (
             <div key={key}>
@@ -33,23 +36,67 @@ function RandomSearch() {
                         ))}
                 </ul>
                 <p>Retweet count: {data.retweet_count}</p>
+                <p>Favourited: {data.favorite_count}</p>
             </div>
         );
     });
-    const handleRobertJ = () => {
-        console.log('Robert J. Sawyer random tweet will go here!');
+    // Function that does the actual search and then random selection of what to display.
+    function ActualRandomSearch(searchValue) {
+        setIsSearching(true)
+        setIsLoading(true)
+        console.log("Random person selected:", searchValue);
+        fetch('/api/random_search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                query: searchValue
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                setData(data)
+                console.log(data);
+                // do something with the response data
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        console.log("Data Received")
+        setIsLoading(false)
+    }
+
+    // Search handlers for Random search for famous people.
+    const handleRobertJ = (event) => {
+        event.preventDefault();
+        console.log('@RobertJSawyer random tweet will go here!');
+        famouseSearchChoice = "@RobertJSawyer"
+        ActualRandomSearch(famouseSearchChoice);
     };
-    const handleArnold = () => {
-        console.log('Arnold S random tweet will go here!');
+    const handleArnold = (event) => {
+        event.preventDefault();
+        console.log('@Schwarzenegger random tweet will go here!');
+        famouseSearchChoice = "@Schwarzenegger"
+        ActualRandomSearch(famouseSearchChoice);
     };
-    const handleArlene = () => {
-        console.log('Arlene random tweet will go here!');
+    const handleArlene = (event) => {
+        event.preventDefault();
+        console.log('@ArleneDickinson random tweet will go here!');
+        famouseSearchChoice = "@ArleneDickinson"
+        ActualRandomSearch(famouseSearchChoice);
     };
-    const handleKiyosaki = () => {
-        console.log('Kiyosaki random tweet will go here!');
+    const handleKiyosaki = (event) => {
+        event.preventDefault();
+        console.log('@theRealKiyosaki random tweet will go here!');
+        famouseSearchChoice = "@theRealKiyosaki"
+        ActualRandomSearch(famouseSearchChoice);
     };
-    const handleDalai = () => {
-        console.log('Dalai Lama random tweet will go here!!');
+    const handleDalai = (event) => {
+        event.preventDefault();
+        console.log('@DalaiLama random tweet will go here!!');
+        famouseSearchChoice = "@DalaiLama"
+        ActualRandomSearch(famouseSearchChoice);
     };
 
     const imageStyle = {
@@ -67,6 +114,8 @@ function RandomSearch() {
                     searchValue={searchValue}
                     setIsSearching={setIsSearching}
                     isSearching={isSearching}
+                    setIsLoading={setIsLoading}
+                    isLoading={isLoading}
                 />
             </nav>
             {/* <div className="d-flex justify-content-around"> */}

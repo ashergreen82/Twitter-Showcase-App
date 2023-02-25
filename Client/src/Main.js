@@ -9,6 +9,7 @@ function Main() {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState([{}]);
     const [isSearching, setIsSearching] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     // useEffect(() => {
     //     console.log("useEffect was executed")
@@ -49,10 +50,10 @@ function Main() {
                         ))}
                 </ul>
                 <p>Retweet count: {data.retweet_count}</p>
+                <p>Favourited: {data.favorite_count}</p>
             </div>
         );
     });
-
     return (
         <>
             <div>
@@ -63,6 +64,8 @@ function Main() {
                     searchValue={searchValue}
                     setIsSearching={setIsSearching}
                     isSearching={isSearching}
+                    setIsLoading={setIsLoading}
+                    isLoading={isLoading}
                 />
             </div>
             {!isSearching ? (

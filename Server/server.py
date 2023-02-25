@@ -146,5 +146,13 @@ def searchTweets():
     return tweets
 
 
+@app.route("/api/random_search", methods=["POST"])
+def searchRandomTweets():
+    query = request.json.get('query')
+    tweets = getTweetsTest(query)
+    # code to select random tweet
+    return tweets
+
+
 if __name__ == "__main__":
     app.run(debug=True)
