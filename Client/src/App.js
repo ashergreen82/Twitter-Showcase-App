@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 // import logo from './logo.svg';
 import { Routes, Route } from "react-router-dom"
 import './App.css';
@@ -7,22 +8,26 @@ import background from "./images/alexander-shatov-SXfwXS0jWNg-unsplash.jpg";
 // import background from "./images/alexander-shatov-k1xf2D7jWUs-unsplash.jpg";
 
 function App() {
+  const [bodyClass, setBodyClass] = useState("body-background");
   return (
     <>
-      <div style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        // backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "Center",
-        height: "100vh",
-        width: "100%"
-      }} >
+      <div className={bodyClass}
+
+      >
         <div className="App">
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/Main" element={<Main />} />
-            <Route path="/Randomsearch" element={<Randomsearch />} />
+            <Route path="/" element={<Main
+              bodyClass={bodyClass}
+              setBodyClass={setBodyClass}
+            />} />
+            <Route path="/Main" element={<Main
+              bodyClass={bodyClass}
+              setBodyClass={setBodyClass}
+            />} />
+            <Route path="/Randomsearch" element={<Randomsearch
+              bodyClass={bodyClass}
+              setBodyClass={setBodyClass}
+            />} />
             {/* <Route path="contact" element={<Contact />} /> */}
           </Routes>
         </div>

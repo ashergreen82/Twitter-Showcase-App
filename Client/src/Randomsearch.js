@@ -10,7 +10,7 @@ import dalaiLama from "./images/Dalailama1.jpg";
 import heartPicture from "./images/heart.png";
 import reTweetPicture from "./images/retweet.png";
 
-function RandomSearch() {
+function RandomSearch({ bodyClass, setBodyClass }) {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState([{}]);
     const [isSearching, setIsSearching] = useState(false);
@@ -19,8 +19,15 @@ function RandomSearch() {
     let famouseSearchChoice = ""
 
     useEffect(() => {
+        if (isSearching === true) {
+            setBodyClass("");
+        }
+    }, [isSearching])
+
+    useEffect(() => {
         if (searchValue === "") {
             setIsSearching(false);
+            setBodyClass("body-background");
         }
     }, [searchValue])
 

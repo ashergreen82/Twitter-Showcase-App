@@ -7,7 +7,8 @@ import heartPicture from "./images/heart.png";
 import reTweetPicture from "./images/retweet.png";
 import Navbar from './Navbar';
 
-function Main() {
+
+function Main({ bodyClass, setBodyClass }) {
     const [searchValue, setSearchValue] = useState("");
     const [data, setData] = useState([{}]);
     const [isSearching, setIsSearching] = useState(false);
@@ -24,8 +25,15 @@ function Main() {
     // }, []);
 
     useEffect(() => {
+        if (isSearching === true) {
+            setBodyClass("");
+        }
+    }, [isSearching])
+
+    useEffect(() => {
         if (searchValue === "") {
             setIsSearching(false);
+            setBodyClass("body-background");
         }
     }, [searchValue])
 
