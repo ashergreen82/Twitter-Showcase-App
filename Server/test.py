@@ -2,9 +2,10 @@ import json
 from PIL import Image
 import requests
 from io import BytesIO
+import random
 
 # Define the filename and location for the file
-filename = r"D:\Asher's Documents\Computer Programming\SDMM\Assignments\Twitter APP\twittershowcase\@elonmusk.json"
+filename = r"D:\Asher's Documents\Computer Programming\SDMM\Assignments\Twitter APP\twittershowcase\Client\@elonmusk.json"
 
 # Open the file for reading
 with open(filename, "r") as f:
@@ -13,6 +14,10 @@ with open(filename, "r") as f:
 
 # Extract data from the JSON file
 tweet_count=1
+# random_tweet = random.choice(tweet_data)
+# print(random_tweet)
+tweets=[]
+images1 = []
 for tweet in tweet_data['statuses']:
     full_text = tweet['text']
     username = tweet['user']['screen_name']
@@ -34,6 +39,9 @@ for tweet in tweet_data['statuses']:
     print('Username: ', username)
     print('Retweet Count: ', retweet_count)
     print('Favorite Count: ', favorite_count)
+    if 'media' in tweet['entities']:
+        for media in tweet['entities']['media']:
+            images1.append(media['media_url'])
     if images:
         print('Image: ', images)
         for image_url in images:
@@ -44,7 +52,19 @@ for tweet in tweet_data['statuses']:
     else:
         print("Image: No Image\n")
     tweet_count += 1
-
+    tweet_dict = {
+        'full_text': full_text,
+        'username': username,
+        'retweet_count': retweet_count,
+        'favorite_count': favorite_count,
+        'images': images
+    }
+    tweets.append(tweet_dict)
+print(tweet_dict)
+print(tweets)
+print(images1)
+random_tweet = random.choice(tweets)
+print(random_tweet)
 # from PIL import Image
 # import requests
 # from io import BytesIO

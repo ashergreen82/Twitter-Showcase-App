@@ -23,27 +23,29 @@ def getTweetsTest(query):
     }
     response = requests.request("GET", url, headers=headers, data=payload)
     tweet_data = response.json()
-    # filename = "@WBrettWilson4count.json"
+    # filename = "@Robertjsawyer.json"
     # with open(filename, "w") as f:
     #     json.dump(dict, f)
     # print(dict)
+    image = ""
     tweets = []
     for tweet in tweet_data['statuses']:
         full_text = tweet['text']
         username = tweet['user']['screen_name']
         retweet_count = tweet['retweet_count']
         favorite_count = tweet['favorite_count']
-        images = []
+        # images = []
         if 'media' in tweet['entities']:
-            for media in tweet['entities']['media']:
-                images.append(media['media_url'])
+            image = tweet['entities']['media'][0]['media_url_https']
+            # for media in tweet['entities']['media']:
+            #     images.append(media['media_url'])
 
         tweet_dict = {
             'full_text': full_text,
             'username': username,
             'retweet_count': retweet_count,
             'favorite_count': favorite_count,
-            'images': images
+            'image': image
         }
         tweets.append(tweet_dict)
 
@@ -53,10 +55,11 @@ def getTweetsTest(query):
         username = tweet['user']['screen_name']
         retweet_count = tweet['retweet_count']
         favorite_count = tweet['favorite_count']
-        images = []
-        if 'media' in tweet['entities']:
-            for media in tweet['entities']['media']:
-                images.append(media['media_url'])
+        # images = []
+        # if 'media' in tweet['entities']:
+        #     for media in tweet['entities']['media']:
+        #         images.append(media['media_url'])
+        print("Image: ", image)
         print("Tweet Number: ", tweet_count)
         print('Full Text: ', full_text)
         print('Username: ', username)
@@ -72,7 +75,8 @@ def getTweetsTest(query):
         # else:
         #     print("Image: No Image\n")
         tweet_count += 1
-    return jsonify(tweets)
+
+    return tweets
 
 
 @app.route("/api")
@@ -137,7 +141,8 @@ def getTweets():
         else:
             print("Image: No Image\n")
         tweet_count += 1
-    return jsonify(tweets)
+    # return jsonify(tweets)
+    return tweets
 
 
 @app.route("/api/search", methods=["POST"])
@@ -151,9 +156,13 @@ def searchTweets():
 def searchRandomTweets():
     query = request.json.get('query')
     tweets = getTweetsTest(query)
-    # code to select random tweet
-
-    return tweets
+    # random_tweet = tweets[0]
+    random_tweet = random.choice(tweets)
+    # print(tweets)
+    print(random_tweet)
+    # print(random_tweet)
+    # selectedTweet = jsonify(random_tweet)
+    return random_tweet
 
 
 if __name__ == "__main__":

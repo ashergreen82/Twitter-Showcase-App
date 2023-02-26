@@ -21,25 +21,25 @@ function RandomSearch() {
         }
     }, [searchValue])
 
-    const displayData = data.map((data, key) => {
-        return (
-            <div key={key}>
-                <h2>Username: {data.username}</h2>
-                <p>Full text: {data.full_text}</p>
-                <p>Images:</p>
-                <ul>
-                    {data.entities?.media &&
-                        data.entities.media.map((media, index) => (
-                            <li key={index}>
-                                <img src={media.media_url_https} alt="tweet media" />
-                            </li>
-                        ))}
-                </ul>
-                <p>Retweet count: {data.retweet_count}</p>
-                <p>Favourited: {data.favorite_count}</p>
-            </div>
-        );
-    });
+    // const displayData = data.map((data, key) => {
+    //     return (
+    //         <div key={key}>
+    //             <h2>Username: {data.username}</h2>
+    //             <p>Full text: {data.full_text}</p>
+    //             <p>Images:</p>
+    //             <ul>
+    //                 {data.entities?.media &&
+    //                     data.entities.media.map((media, index) => (
+    //                         <li key={index}>
+    //                             <img src={media.media_url_https} alt="tweet media" />
+    //                         </li>
+    //                     ))}
+    //             </ul>
+    //             <p>Retweet count: {data.retweet_count}</p>
+    //             <p>Favourited: {data.favorite_count}</p>
+    //         </div>
+    //     );
+    // });
     // Function that does the actual search and then random selection of what to display.
     function ActualRandomSearch(searchValue) {
         setIsSearching(true)
@@ -130,9 +130,27 @@ function RandomSearch() {
                 </div>
             ) : (
                 <div>
-                    {displayData}
+                    {data && <div>
+                        <h2>Username: {data.username}</h2>
+                        <p>Full text: {data.full_text}</p>
+                        <p>Image:</p>
+                        {/* <ul>
+                            {data.entities?.media &&
+                                data.entities.media.map((media, index) => (
+                                    <li key={index}>
+                                        <img src={media.media_url_https} alt="tweet media" />
+                                    </li>
+                                ))}
+                        </ul> */}
+                        <img src={data.image} alt="Tweet Picture Missing"></img>
+                        <p>Retweet count: {data.retweet_count}</p>
+                        <p>Favourited: {data.favorite_count}</p>
+                    </div>}
                 </div>
             )}
+            <div>
+                {/* {data && <div>{data.full_text}</div>} */}
+            </div>
         </>
     )
 }
