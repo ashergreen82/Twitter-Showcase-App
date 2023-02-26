@@ -20,31 +20,8 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
 
     function handleSearchButtonClick(event) {
         event.preventDefault();
-        setIsSearching(true)
-        setIsLoading(true)
-        // fetch("/api")
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setData(data)
-        //         console.log(data)
-        //     })
-        // fetch('/api/search', {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         query: searchValue
-        //     })
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         // do something with the response data
-        //     })
-        //     .catch(error => {
-        //         console.error(error);
-        //     });
+        setIsSearching(true);
+        setIsLoading(true);
         console.log("Search button clicked with search value:", searchValue);
         fetch('/api/search', {
             method: 'POST',
@@ -57,16 +34,23 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
         })
             .then(response => response.json())
             .then(data => {
-                setData(data)
+                setData(data);
                 console.log(data);
                 // do something with the response data
             })
             .catch(error => {
                 console.error(error);
             });
-        console.log("Data Received")
-        setIsLoading(false)
+        console.log("Data Received");
+        setIsLoading(false);
     }
+    // const handleRandomSearch = () => {
+    //     setTweet("");
+    //     setIsLoading(false);
+    //     setHasError(false);
+    //     setSearchTerm("");
+    // };
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
