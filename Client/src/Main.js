@@ -40,9 +40,8 @@ function Main() {
     const displayData = data.map((data, key) => {
         return (
             <div className="main_search background-color-bg-primary" key={key}>
-                <h2>Username: {data.username}</h2>
-                <p>Full text: {data.full_text}</p>
-                <p>Image:</p>
+                <h2>{data.username}</h2>
+                <p>{data.full_text}</p>
                 {/* <ul>
                     {data.entities?.media &&
                         data.entities.media.map((media, index) => (
@@ -51,11 +50,17 @@ function Main() {
                             </li>
                         ))}
                 </ul> */}
-                <img src={data.image} alt="Tweet Picture Missing" className="img-style"></img>
+                <img src={data.image} alt="No Image Available" className="img-style"></img>
                 {/* <p>Retweet: {data.retweet_count}</p> */}
                 {/* <p>Favourited: {data.favorite_count}</p> */}
-                <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p>
-                <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p>
+                {/* <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p> */}
+                {/* <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p> */}
+                <div className="tweet-icons">
+                    <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
+                    <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
+                    <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
+                    <p className="img-value" id="favourite_value">{data.favorite_count}</p>
+                </div>
             </div>
         );
     });

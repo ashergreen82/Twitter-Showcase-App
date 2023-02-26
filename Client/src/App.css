@@ -38,6 +38,10 @@
   }
 }
 
+h2 {
+  margin-top: 20px;
+}
+
 .main_header {
   /* color: #38a6ff; */
   color: black;
@@ -60,4 +64,21 @@
 .img-icon {
   width: 50px;
   height: auto;
+}
+
+.tweet-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.tweet-icons img {
+  margin-right: 10px;
+  margin-left: 75px;
+}
+
+.img-value {
+  margin-right: 5px;
+  /* margin-left: 5px; */
 }
