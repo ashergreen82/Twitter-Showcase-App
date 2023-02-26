@@ -25,11 +25,11 @@ function RandomSearch() {
     const displayData = data.map((data, key) => {
         return (
             <div key={key}>
-                <h2>Username: {data.username}</h2>
-                <p>Full text: {data.full_text}</p>
-                <p>Images:</p>
-                <p>Retweet count: {data.retweet_count}</p>
-                <p>Favourited: {data.favorite_count}</p>
+                <h2>Username: {data.username ?? "Unknown"}</h2>
+                <p>Full text: {data.full_text ?? "No tweet text"}</p>
+                <p>Image: <img src={data.image} alt="Tweet Picture Missing"></img></p>
+                <p>Retweet count: {data.retweet_count ?? 0}</p>
+                <p>Favourited: {data.favorite_count ?? 0}</p>
             </div>
         );
     });
@@ -97,6 +97,75 @@ function RandomSearch() {
         width: "315px",
         height: "625px",
     };
+    // return (
+    //     <>
+    //         <nav>
+    //             <Navbar
+    //                 data={data}
+    //                 setData={setData}
+    //                 setSearchValue={setSearchValue}
+    //                 searchValue={searchValue}
+    //                 setIsSearching={setIsSearching}
+    //                 isSearching={isSearching}
+    //                 setIsLoading={setIsLoading}
+    //                 isLoading={isLoading}
+    //             />
+    //         </nav>
+    //         {!isSearching && !randomSearchOn ? (
+    //             <div className="famous_people d-flex justify-content-evenly">
+    //                 <p className="body_text text-justify">
+    //                     This is the random search page! Click on any of the pictures below
+    //                     to display a random tweet.
+    //                 </p>
+    //                 <img
+    //                     src={robertSawyer}
+    //                     alt="robert J Sawyer"
+    //                     style={imageStyle}
+    //                     onClick={handleRobertJ}
+    //                 />
+    //                 <img
+    //                     src={arnold}
+    //                     alt="Arnold Schwarnegger"
+    //                     style={imageStyle}
+    //                     onClick={handleArnold}
+    //                 />
+    //                 <img
+    //                     src={arlene}
+    //                     alt="Arlene Dickinson"
+    //                     style={imageStyle}
+    //                     onClick={handleArlene}
+    //                 />
+    //                 <img
+    //                     src={robertKiyosaki}
+    //                     alt="Robert Kiyosaki"
+    //                     style={imageStyle}
+    //                     onClick={handleKiyosaki}
+    //                 />
+    //                 <img
+    //                     src={dalaiLama}
+    //                     alt="Dalai Lama"
+    //                     style={imageStyle}
+    //                     onClick={handleDalai}
+    //                 />
+    //             </div>
+    //         ) : (
+    //             <div className="famous_people d-flex justify-content-evenly">
+    //                 <button className="btn btn-danger" onClick={() => setRandomSearchOn(false)}>
+    //                     Back to famous people
+    //                 </button>
+    //                 {isLoading ? (
+    //                     <div className="spinner-border text-primary" role="status">
+    //                         <span className="sr-only">Loading...</span>
+    //                     </div>
+    //                 ) : data[0].full_text ? (
+    //                     displayData
+    //                 ) : (
+    //                     <h2>No tweet found.</h2>
+    //                 )}
+    //             </div>
+    //         )}
+    //     </>
+    // );
 
     return (
         <>
@@ -129,19 +198,21 @@ function RandomSearch() {
                         <p>Full text: {data.full_text}</p>
                         <p>Image:</p>
                         {/* <ul>
-                            {data.entities?.media &&
-                                data.entities.media.map((media, index) => (
-                                    <li key={index}>
-                                        <img src={media.media_url_https} alt="tweet media" />
-                                    </li>
-                                ))}
-                        </ul> */}
-                        <img src={data.image} alt="Tweet Picture Missing"></img>
+                                {data.entities?.media &&
+                                    data.entities.media.map((media, index) => (
+                                        <li key={index}>
+                                            <img src={media.media_url_https} alt="tweet media" />
+                                        </li>
+                                    ))}
+                            </ul> */}
+                        <img src={data.image} alt="Tweet Picture Missing" className="img-style"></img>
                         <p>Retweet count: {data.retweet_count}</p>
                         <p>Favourited: {data.favorite_count}</p>
                     </div>
                     ) : (
-                        { displayData }
+                        <div>
+                            {displayData}
+                        </div>
                     )
                     }
                 </div>

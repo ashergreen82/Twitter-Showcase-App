@@ -51,3 +51,13 @@
 .famous_people {
   cursor: pointer;
 }
+
+.img-style {
+  width: 300px;
+  height: auto;
+}
+
+.img-icon {
+  width: 50px;
+  height: auto;
+}

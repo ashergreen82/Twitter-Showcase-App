@@ -3,6 +3,8 @@ import Randomsearch from "./Randomsearch";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import mainPicture from "./images/Inspired_motivational_Quotes-Small.png";
+import heartPicture from "./images/heart.png"
+import reTweetPicture from "./images/retweet.png"
 import Navbar from './Navbar';
 
 function Main() {
@@ -37,7 +39,7 @@ function Main() {
     }
     const displayData = data.map((data, key) => {
         return (
-            <div key={key}>
+            <div className="main_search background-color-bg-primary" key={key}>
                 <h2>Username: {data.username}</h2>
                 <p>Full text: {data.full_text}</p>
                 <p>Image:</p>
@@ -49,9 +51,11 @@ function Main() {
                             </li>
                         ))}
                 </ul> */}
-                <img src={data.image} alt="Tweet Picture Missing"></img>
-                <p>Retweet count: {data.retweet_count}</p>
-                <p>Favourited: {data.favorite_count}</p>
+                <img src={data.image} alt="Tweet Picture Missing" className="img-style"></img>
+                {/* <p>Retweet: {data.retweet_count}</p> */}
+                {/* <p>Favourited: {data.favorite_count}</p> */}
+                <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p>
+                <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p>
             </div>
         );
     });
@@ -74,9 +78,9 @@ function Main() {
                     <h1 className="h2">WELCOME TO</h1>
                     <h1 className="h1">THE SHOWCASE TWITTER APP</h1>
                     <p className="body_text text-justify">
-                        Just enter your search in the search bar above and we will search the last 7 days on twitter for you.  We also offer a random search as well, so feel free to give that shot.
+                        Just enter your search in the search bar above and we will grab the last few tweets on twitter for you.  We also offer a random search as well, so feel free to give that shot.
                     </p>
-                    <img src={mainPicture} alt="The main picture for this page that somehow went missing." className="w-10" />
+                    <img src={mainPicture} alt="The main picture for this page has somehow went missing." className="w-10" />
                 </div>
             ) : (
                 <div>
