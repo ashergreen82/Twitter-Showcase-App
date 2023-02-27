@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <div className={bodyClass}
-
       >
         <div className="App">
           <Routes>
