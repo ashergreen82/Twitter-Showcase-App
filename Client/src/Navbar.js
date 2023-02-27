@@ -44,12 +44,6 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
         console.log("Data Received");
         setIsLoading(false);
     }
-    // const handleRandomSearch = () => {
-    //     setTweet("");
-    //     setIsLoading(false);
-    //     setHasError(false);
-    //     setSearchTerm("");
-    // };
 
     return (
         <>

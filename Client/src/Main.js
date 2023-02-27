@@ -63,13 +63,32 @@ function Main({ bodyClass, setBodyClass }) {
                 {/* <p>Favourited: {data.favorite_count}</p> */}
                 {/* <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p> */}
                 {/* <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p> */}
-                <div className="tweet-icons">
-                    <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
-                    <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
-                    <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
-                    <p className="img-value" id="favourite_value">{data.favorite_count}</p>
+                <div className="tweet-icons container d-flex justify-content-center my-2 gx-1">
+                    {/* <div className="tweet-icons d-flex justify-content-between my-2 gx-0"> */}
+                    <div className="tweet-icons">
+                        <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
+                        <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
+                        <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
+                        <p className="img-value" id="favourite_value">{data.favorite_count}</p>
+                    </div>
+                    {/* <div className="tweet-icons containter">
+                    <div className="row">
+                        <div ClassName="col">
+                            <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
+                        </div>
+                        <div ClasName="col">
+                            <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
+                        </div>
+                        <div>
+                            <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
+                        </div>
+                        <div ClasName="col">
+                            <p className="img-value" id="favourite_value">{data.favorite_count}</p>
+                        </div>
+                    </div>
+                </div> */}
                 </div>
-            </div>
+            </div >
         );
     });
     return (

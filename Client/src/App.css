@@ -67,19 +67,19 @@ h2 {
 }
 
 .tweet-icons {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 10vh; */
 }
 
 .tweet-icons img {
-  margin-right: 10px;
-  margin-left: 75px;
+  /* margin-right: 5px; */
+  /* margin-left: 5px; */
 }
 
 .img-value {
-  margin-right: 5px;
+  /* margin-right: 5px; */
   /* margin-left: 5px; */
 }
 
