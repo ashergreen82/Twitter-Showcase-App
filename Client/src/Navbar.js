@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
-function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIsSearching, isLoading, setIsLoading }) {
+function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIsSearching, isLoading, setIsLoading, setNoTweetsFound, noTweetsFound }) {
 
     function handleSearchInputChange(event) {
         event.preventDefault();
@@ -36,7 +36,9 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
             .then(data => {
                 setData(data);
                 console.log(data);
-                // do something with the response data
+                if (data.statuses.length === 0) {
+                    setNoTweetsFound(true);
+                }
             })
             .catch(error => {
                 console.error(error);

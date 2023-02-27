@@ -16,6 +16,7 @@ function RandomSearch({ bodyClass, setBodyClass }) {
     const [isSearching, setIsSearching] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [randomSearchOn, setRandomSearchOn] = useState(false);
+    const [noTweetsFound, setNoTweetsFound] = useState(false);
     let famouseSearchChoice = ""
 
     useEffect(() => {
@@ -57,16 +58,8 @@ function RandomSearch({ bodyClass, setBodyClass }) {
                 </div>
             </div>
         );
-        // return (
-        //     <div key={key}>
-        //         <h2>Username: {data.username ?? "Unknown"}</h2>
-        //         <p>Full text: {data.full_text ?? "No tweet text"}</p>
-        //         <p>Image: <img src={data.image} alt="Tweet Picture Missing"></img></p>
-        //         <p>Retweet count: {data.retweet_count ?? 0}</p>
-        //         <p>Favourited: {data.favorite_count ?? 0}</p>
-        //     </div>
-        // );
     });
+
     // Function that does the actual search and then random selection of what to display.
     function ActualRandomSearch(searchValue) {
         setIsSearching(true);
@@ -86,7 +79,6 @@ function RandomSearch({ bodyClass, setBodyClass }) {
             .then(data => {
                 setData([data]);
                 console.log(data);
-                // do something with the response data
             })
             .catch(error => {
                 console.error(error);
@@ -144,6 +136,8 @@ function RandomSearch({ bodyClass, setBodyClass }) {
                     isSearching={isSearching}
                     setIsLoading={setIsLoading}
                     isLoading={isLoading}
+                    setNoTweetsFound={setNoTweetsFound}
+                    noTweetsFound={noTweetsFound}
                 />
             </nav>
             {/* <div className="d-flex justify-content-around"> */}
