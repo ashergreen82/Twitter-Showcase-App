@@ -1,6 +1,8 @@
-import react from react;
+import React from "react";
+import heartPicture from "../images/heart.png";
+import reTweetPicture from "../images/retweet.png";
 
-function TweetDisplay() {
+function TweetDisplay({ data, setData, key }) {
     return (
         <div className="main_search background-color-bg-primary" key={key}>
             <h2>{data.username}</h2>

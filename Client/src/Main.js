@@ -3,8 +3,6 @@ import Randomsearch from "./Randomsearch";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import mainPicture from "./images/Inspired_motivational_Quotes-Small.png";
-import heartPicture from "./images/heart.png";
-import reTweetPicture from "./images/retweet.png";
 import Navbar from './Navbar';
 import Tweet from "./components/TweetDisplay";
 
@@ -51,7 +49,11 @@ function Main({ bodyClass, setBodyClass }) {
         data.map((data, key) => {
             return (
                 <div>
-                    <Tweet />
+                    <Tweet
+                        data={data}
+                        setData={setData}
+                        key={key}
+                    />
                 </div>
             )
         })) : (

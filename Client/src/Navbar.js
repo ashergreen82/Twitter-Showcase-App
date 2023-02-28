@@ -57,7 +57,12 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
                 <div className="collapse navbar-collapse w-100" id="navbarNav">
                     <ul className="navbar-nav d-flex flex-row w-100 justify-content-between">
                         <li className="nav-item col">
-                            <Link className="nav-link" to="/">Main</Link>
+                            <Link
+                                className="nav-link"
+                                to="/"
+                                reloadDocument={true}>
+                                Main
+                            </Link>
                         </li>
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col-8">
@@ -69,7 +74,13 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
                         </li>
                         {/* <div className="vr mx-5"></div> */}
                         <li className="nav-item col">
-                            <Link className="nav-link" to="/Randomsearch">Random Search</Link>
+                            {/* <Link className="nav-link" to="/Randomsearch">Random Search</Link> */}
+                            <Link
+                                className="nav-link"
+                                to="/Randomsearch"
+                                reloadDocument={true}>
+                                Random Search
+                            </Link>
                         </li>
                     </ul>
                 </div>

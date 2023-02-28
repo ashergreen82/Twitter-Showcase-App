@@ -66,22 +66,22 @@ h2 {
   height: auto;
 }
 
-.tweet-icons {
-  /* display: flex;
+/* .tweet-icons {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh; */
-}
+  height: 10vh;
+} */
 
-.tweet-icons img {
-  /* margin-right: 5px; */
-  /* margin-left: 5px; */
-}
+/* .tweet-icons img {
+  margin-right: 5px;
+  margin-left: 5px;
+} */
 
-.img-value {
-  /* margin-right: 5px; */
-  /* margin-left: 5px; */
-}
+/* .img-value {
+  margin-right: 5px;
+  margin-left: 5px;
+} */
 
 .body-background {
   background-image: url(./images/alexander-shatov-SXfwXS0jWNg-unsplash.jpg);
