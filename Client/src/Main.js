@@ -6,6 +6,7 @@ import mainPicture from "./images/Inspired_motivational_Quotes-Small.png";
 import heartPicture from "./images/heart.png";
 import reTweetPicture from "./images/retweet.png";
 import Navbar from './Navbar';
+import Tweet from "./components/TweetDisplay";
 
 
 function Main({ bodyClass, setBodyClass }) {
@@ -49,51 +50,11 @@ function Main({ bodyClass, setBodyClass }) {
     const displayData = data.length ? (
         data.map((data, key) => {
             return (
-                <div className="main_search background-color-bg-primary" key={key}>
-                    <h2>{data.username}</h2>
-                    <p>{data.full_text}</p>
-                    {/* <ul>
-                        {data.entities?.media &&
-                            data.entities.media.map((media, index) => (
-                                <li key={index}>
-                                    <img src={media.media_url_https} alt="tweet media" />
-                                </li>
-                            ))}
-                    </ul> */}
-                    <img src={data.image} alt="No Image Available" className="img-style"></img>
-                    {/* <p>Retweet: {data.retweet_count}</p> */}
-                    {/* <p>Favourited: {data.favorite_count}</p> */}
-                    {/* <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p> */}
-                    {/* <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p> */}
-                    <div className="tweet-icons container d-flex justify-content-center my-2 gx-1">
-                        {/* <div className="tweet-icons d-flex justify-content-between my-2 gx-0"> */}
-                        <div className="tweet-icons">
-                            <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
-                            <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
-                            <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
-                            <p className="img-value" id="favourite_value">{data.favorite_count}</p>
-                        </div>
-                        {/* <div className="tweet-icons containter">
-                        <div className="row">
-                            <div ClassName="col">
-                                <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
-                            </div>
-                            <div ClasName="col">
-                                <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
-                            </div>
-                            <div>
-                                <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
-                            </div>
-                            <div ClasName="col">
-                                <p className="img-value" id="favourite_value">{data.favorite_count}</p>
-                            </div>
-                        </div>
-                    </div> */}
-                    </div>
-                </div >
-            );
-        })
-    ) : (
+                <div>
+                    <Tweet />
+                </div>
+            )
+        })) : (
         <div className="main_search background-color-bg-primary">
             <h2>Sorry, No Tweets Found</h2>
         </div>
