@@ -37,14 +37,6 @@ function RandomSearch({ bodyClass, setBodyClass }) {
             <div className="main_search background-color-bg-primary" key={key}>
                 <h2>{data.username}</h2>
                 <p>{data.full_text}</p>
-                {/* <ul>
-                    {data.entities?.media &&
-                        data.entities.media.map((media, index) => (
-                            <li key={index}>
-                                <img src={media.media_url_https} alt="tweet media" />
-                            </li>
-                        ))}
-                </ul> */}
                 <img src={data.image} alt="No Image Available" className="img-style"></img>
                 {/* <p>Retweet: {data.retweet_count}</p> */}
                 {/* <p>Favourited: {data.favorite_count}</p> */}
