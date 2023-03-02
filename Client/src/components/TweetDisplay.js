@@ -2,9 +2,9 @@ import React from "react";
 import heartPicture from "../images/heart.png";
 import reTweetPicture from "../images/retweet.png";
 
-function TweetDisplay({ data, setData, key }) {
+function TweetDisplay({ data, setData }) {
     return (
-        <div className="main_search background-color-bg-primary" key={key}>
+        <div className="main_search background-color-bg-primary">
             <h2>{data.username}</h2>
             <p>{data.full_text}</p>
             <img src={data.image} alt="No Image Available" className="img-style"></img>

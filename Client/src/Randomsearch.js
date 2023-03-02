@@ -9,6 +9,7 @@ import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
 import dalaiLama from "./images/Dalailama1.jpg";
 import heartPicture from "./images/heart.png";
 import reTweetPicture from "./images/retweet.png";
+import Tweet from "./components/TweetDisplay";
 
 function RandomSearch({ bodyClass, setBodyClass }) {
     const [searchValue, setSearchValue] = useState("");
@@ -32,26 +33,40 @@ function RandomSearch({ bodyClass, setBodyClass }) {
         }
     }, [searchValue])
 
-    const displayData = data.map((data, key) => {
-        return (
-            <div className="main_search background-color-bg-primary" key={key}>
-                <h2>{data.username}</h2>
-                <p>{data.full_text}</p>
-                <img src={data.image} alt="No Image Available" className="img-style"></img>
-                {/* <p>Retweet: {data.retweet_count}</p> */}
-                {/* <p>Favourited: {data.favorite_count}</p> */}
-                {/* <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p> */}
-                {/* <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p> */}
-                <div className="tweet-icons">
-                    <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
-                    <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
-                    <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
-                    <p className="img-value" id="favourite_value">{data.favorite_count}</p>
-                </div>
-            </div>
-        );
-    });
+    // const displayData = data.map((data, key) => {
+    // return (
+    //     <div className="main_search background-color-bg-primary" key={key}>
+    //         <h2>{data.username}</h2>
+    //         <p>{data.full_text}</p>
+    //         <img src={data.image} alt="No Image Available" className="img-style"></img>
+    //         {/* <p>Retweet: {data.retweet_count}</p> */}
+    //         {/* <p>Favourited: {data.favorite_count}</p> */}
+    //         {/* <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p> */}
+    //         {/* <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p> */}
+    //         <div className="tweet-icons">
+    //             <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
+    //             <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
+    //             <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
+    //             <p className="img-value" id="favourite_value">{data.favorite_count}</p>
+    //         </div>
+    //     </div>
+    // );
 
+    const displayData = data.length ? (
+        data.map((data, key) => {
+            return (
+                <div key={key}>
+                    <Tweet
+                        data={data}
+                        setData={setData}
+                    />
+                </div>
+            )
+        })) : (
+        <div className="main_search background-color-bg-primary">
+            <h2>Sorry, No Tweets Found</h2>
+        </div>
+    );
     // Function that does the actual search and then random selection of what to display.
     function ActualRandomSearch(searchValue) {
         setIsSearching(true);

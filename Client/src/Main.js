@@ -37,22 +37,21 @@ function Main({ bodyClass, setBodyClass }) {
         }
     }, [searchValue])
 
-    function createSearchResultHTML(result) {
-        return `
-          <li>
-            <a href="${result.url}">${result.title}</a>
-            <p>${result.description}</p>
-          </li>
-        `;
-    }
+    // function createSearchResultHTML(result) {
+    //     return `
+    //       <li>
+    //         <a href="${result.url}">${result.title}</a>
+    //         <p>${result.description}</p>
+    //       </li>
+    //     `;
+    // }
     const displayData = data.length ? (
         data.map((data, key) => {
             return (
-                <div>
+                <div key={key}>
                     <Tweet
                         data={data}
                         setData={setData}
-                        key={key}
                     />
                 </div>
             )
