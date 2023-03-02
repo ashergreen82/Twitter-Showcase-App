@@ -31,8 +31,8 @@ This modular approach helped because having two separate pages with the search b
 was a challenge, as many of the Main page components had to be copied for use on the Random Search page.  
 The modular approach allowed me to minimize the need for copying code.
 
-Unfortunately this prolonged the development of my project by quite a bit as a result, but I think you’ll agree
-that the final result was worth it!
+Unfortunately this prolonged the development of my project by quite a bit as a result, but I think you’ll
+agree that the final result was worth it!
 
 </pre>
 
