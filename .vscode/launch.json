@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "D:\\Asher's Documents\\Computer Programming\\SDMM\\Assignments\\Twitter APP\twittershowcase\\Server\\server.py",
+                "FLASK_APP": ".\\Server\\server.py",
                 "FLASK_DEBUG": "1"
             },
             "args": [
