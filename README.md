@@ -27,6 +27,13 @@ Philosophy aside, I have also learned about being able to break down the project
 and get each one working.  For example in React, I was able to make the Navbar a separate item, and
 when displaying content I created a separate component for that.  This allows the programming to be modular.  
 
+This modular approach helped because having two separate pages with the search bar inside the navigation bar
+was a challenge, as many of the Main page components had to be copied for use on the Random Search page.  
+The modular approach allowed me to minimize the need for copying code.
+
+Unfortunately this prolonged the development of my project by quite a bit as a result, but I think you’ll agree
+that the final result was worth it!
+
 </pre>
 
 #### **Author**

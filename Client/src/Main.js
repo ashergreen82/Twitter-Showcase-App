@@ -1,11 +1,8 @@
 import React from 'react';
-import Randomsearch from "./Randomsearch";
 import { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
 import mainPicture from "./images/Inspired_motivational_Quotes-Small.png";
 import Navbar from './Navbar';
 import Tweet from "./components/TweetDisplay";
-
 
 function Main({ bodyClass, setBodyClass }) {
     const [searchValue, setSearchValue] = useState("");
@@ -13,16 +10,6 @@ function Main({ bodyClass, setBodyClass }) {
     const [isSearching, setIsSearching] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [noTweetsFound, setNoTweetsFound] = useState(false);
-
-    // useEffect(() => {
-    //     console.log("useEffect was executed")
-    //     fetch("/api")
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setData(data)
-    //             console.log(data)
-    //         })
-    // }, []);
 
     useEffect(() => {
         if (isSearching === true) {
@@ -37,14 +24,6 @@ function Main({ bodyClass, setBodyClass }) {
         }
     }, [searchValue])
 
-    // function createSearchResultHTML(result) {
-    //     return `
-    //       <li>
-    //         <a href="${result.url}">${result.title}</a>
-    //         <p>${result.description}</p>
-    //       </li>
-    //     `;
-    // }
     const displayData = data.length ? (
         data.map((data, key) => {
             return (

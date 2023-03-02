@@ -1,14 +1,14 @@
 import React from "react";
 import { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Navbar from './Navbar';
 import robertSawyer from "./images/Robert_j_sawyer_in_2005.jpg";
 import arnold from "./images/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg";
 import arlene from "./images/Arlene_Dickinson_2021.jpg";
 import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
 import dalaiLama from "./images/Dalailama1.jpg";
-import heartPicture from "./images/heart.png";
-import reTweetPicture from "./images/retweet.png";
+// import heartPicture from "./images/heart.png";
+// import reTweetPicture from "./images/retweet.png";
 import Tweet from "./components/TweetDisplay";
 
 function RandomSearch({ bodyClass, setBodyClass }) {
@@ -20,37 +20,20 @@ function RandomSearch({ bodyClass, setBodyClass }) {
     const [noTweetsFound, setNoTweetsFound] = useState(false);
     let famouseSearchChoice = ""
 
+    // This code removes the background picture when there is search activity
     useEffect(() => {
         if (isSearching === true) {
             setBodyClass("");
         }
     }, [isSearching])
 
+    // This code puts the background picture in place when there is no search activity
     useEffect(() => {
         if (searchValue === "") {
             setIsSearching(false);
             setBodyClass("body-background");
         }
     }, [searchValue])
-
-    // const displayData = data.map((data, key) => {
-    // return (
-    //     <div className="main_search background-color-bg-primary" key={key}>
-    //         <h2>{data.username}</h2>
-    //         <p>{data.full_text}</p>
-    //         <img src={data.image} alt="No Image Available" className="img-style"></img>
-    //         {/* <p>Retweet: {data.retweet_count}</p> */}
-    //         {/* <p>Favourited: {data.favorite_count}</p> */}
-    //         {/* <p><img src={reTweetPicture} alt="Retweet: " className="img-icon"></img> {data.retweet_count}</p> */}
-    //         {/* <p><img src={heartPicture} alt="Favourited: " className="img-icon"></img> {data.favorite_count}</p> */}
-    //         <div className="tweet-icons">
-    //             <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
-    //             <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
-    //             <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
-    //             <p className="img-value" id="favourite_value">{data.favorite_count}</p>
-    //         </div>
-    //     </div>
-    // );
 
     const displayData = data.length ? (
         data.map((data, key) => {
@@ -67,6 +50,7 @@ function RandomSearch({ bodyClass, setBodyClass }) {
             <h2>Sorry, No Tweets Found</h2>
         </div>
     );
+
     // Function that does the actual search and then random selection of what to display.
     function ActualRandomSearch(searchValue) {
         setIsSearching(true);
@@ -147,7 +131,7 @@ function RandomSearch({ bodyClass, setBodyClass }) {
                     noTweetsFound={noTweetsFound}
                 />
             </nav>
-            {/* <div className="d-flex justify-content-around"> */}
+
             {!isSearching ? (
                 <div className="famous_people d-flex justify-content-evenly">
                     <p className="body_text text-justify">This is the random search page!  Click on any of the pictures below to display a random tweet.</p>
