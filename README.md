@@ -23,6 +23,8 @@ This program was also my continued practice in working with APIs,  APIs as you k
 important in working on the web as the web is the glue that holds are world together.  It is through
 the web that we can remove fear and promote peace in our world.
 
+Philosophy aside, I have also learned about being able to break down the project into small components and gert each one working.  For example in React, I was able to make the Navbar a separate item, and when displaying content I created a separate component for that.  This allows the programming to be modular.  
+
 </pre>
 
 #### **Author**
