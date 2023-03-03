@@ -14,13 +14,13 @@ function TweetDisplay({ data, setData }) {
                         <img src={reTweetPicture} alt="Retweet: " className="img-icon" id="retweet_icon"></img>
                     </div>
                     <div className="col gl-5 mt-3 ">
-                        <p className="img-value" id="retreat_Value">{data.retweet_count}</p>
+                        <span className="img-value" id="retreat_Value">{data.retweet_count}</span>
                     </div>
                     <div className="col pl-1 mt-1">
                         <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
                     </div>
                     <div className="col mt-3">
-                        <p className="img-value" id="favourite_value">{data.favorite_count}</p>
+                        <span className="img-value" id="favourite_value">{data.favorite_count}</span>
                     </div>
                 </div>
             </div>
