@@ -16,7 +16,7 @@ function TweetDisplay({ data, setData }) {
                     <div className="col mt-2">
                         <span className="img-value" id="retreat_Value">{data.retweet_count}</span>
                     </div>
-                    <div className="col px-2 ms-5">
+                    <div className="col mt-1 px-2 ms-5">
                         <img src={heartPicture} alt="Favourited: " className="img-icon" id="favourite_icon"></img>
                     </div>
                     <div className="col mt-2">
