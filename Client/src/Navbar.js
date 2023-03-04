@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
 function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIsSearching, isLoading, setIsLoading, setNoTweetsFound, noTweetsFound }) {
@@ -26,7 +26,7 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
             .then(data => {
                 setData(data);
                 console.log(data);
-                if (data.statuses.length === 0) {
+                if (data.length === 0) {
                     setNoTweetsFound(true);
                 }
             })
