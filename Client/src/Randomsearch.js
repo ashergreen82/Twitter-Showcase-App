@@ -21,7 +21,7 @@ function RandomSearch({ bodyClass, setBodyClass }) {
         if (isSearching === true) {
             setBodyClass("");
         }
-    }, [isSearching])
+    }, [isSearching, setBodyClass])
 
     // This code puts the background picture in place when there is no search activity
     useEffect(() => {
@@ -29,7 +29,7 @@ function RandomSearch({ bodyClass, setBodyClass }) {
             setIsSearching(false);
             setBodyClass("body-background");
         }
-    }, [searchValue])
+    }, [searchValue, setBodyClass, setIsSearching])
 
     const displayData = data.length ? (
         data.map((data, key) => {

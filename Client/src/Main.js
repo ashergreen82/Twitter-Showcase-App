@@ -14,14 +14,14 @@ function Main({ bodyClass, setBodyClass }) {
         if (isSearching === true) {
             setBodyClass("");
         }
-    }, [isSearching])
+    }, [isSearching, setBodyClass])
 
     useEffect(() => {
         if (searchValue === "") {
             setIsSearching(false);
             setBodyClass("body-background");
         }
-    }, [searchValue])
+    }, [searchValue, setBodyClass, setIsSearching])
 
     const displayData = data.length ? (
         data.map((data, key) => {
@@ -61,7 +61,7 @@ function Main({ bodyClass, setBodyClass }) {
                     <p className="body_text text-justify">
                         Just enter your search in the search bar above and we will grab the last few tweets on twitter for you.  We also offer a random search as well, so feel free to give that shot.
                     </p>
-                    <img src={mainPicture} alt="The main picture for this page has somehow went missing." className="w-10" />
+                    <img src={mainPicture} alt="Twitter Screenshot" className="w-10" />
                 </div>
             ) : (
                 <div>

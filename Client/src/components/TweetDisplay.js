@@ -7,7 +7,7 @@ function TweetDisplay({ data, setData }) {
         <div className="main_search background-color-bg-primary">
             <h2>{data.username}</h2>
             <p>{data.full_text}</p>
-            <img src={data.image} alt="No Image Available" className="img-style"></img>
+            <img src={data.image} alt="" className="img-style"></img>
             <div className="tweet-icons container d-flex justify-content-center">
                 <div className="tweet-icons d-flex align items-center jusity-content-center">
                     <div className="col px-2">
