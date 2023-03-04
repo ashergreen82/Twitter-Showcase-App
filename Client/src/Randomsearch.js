@@ -12,7 +12,7 @@ function RandomSearch({ bodyClass, setBodyClass }) {
     const [data, setData] = useState([{}]);
     const [isSearching, setIsSearching] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [randomSearchOn, setRandomSearchOn] = useState(false);
+    // const [randomSearchOn, setRandomSearchOn] = useState(false);
     const [noTweetsFound, setNoTweetsFound] = useState(false);
     let famouseSearchChoice = ""
 
@@ -51,7 +51,7 @@ function RandomSearch({ bodyClass, setBodyClass }) {
     function ActualRandomSearch(searchValue) {
         setIsSearching(true);
         setIsLoading(true);
-        setRandomSearchOn(true);
+        // setRandomSearchOn(true);
         fetch('/api/random_search', {
             method: 'POST',
             headers: {
