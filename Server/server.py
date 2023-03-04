@@ -52,16 +52,12 @@ def getTweets(query):
         username = tweet['user']['screen_name']
         retweet_count = tweet['retweet_count']
         favorite_count = tweet['favorite_count']
-        # images = []
-        # if 'media' in tweet['entities']:
-        #     for media in tweet['entities']['media']:
-        #         images.append(media['media_url'])
-        print("Image: ", image)
-        print("Tweet Number: ", tweet_count)
-        print('Full Text: ', full_text)
-        print('Username: ', username)
-        print('Retweet Count: ', retweet_count)
-        print('Favorite Count: ', favorite_count)
+        # print("Image: ", image)
+        # print("Tweet Number: ", tweet_count)
+        # print('Full Text: ', full_text)
+        # print('Username: ', username)
+        # print('Retweet Count: ', retweet_count)
+        # print('Favorite Count: ', favorite_count)
         # if images:
         #     print('Image: ', images)
         #     for image_url in images:
