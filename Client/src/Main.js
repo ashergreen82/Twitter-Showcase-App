@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import mainPicture from "./images/Inspired_motivational_Quotes-Small.png";
 import Navbar from './Navbar';
 import Tweet from "./components/TweetDisplay";
