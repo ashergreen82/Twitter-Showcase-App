@@ -66,23 +66,6 @@ h2 {
   height: 50px;
 }
 
-/* .tweet-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-} */
-
-/* .tweet-icons img {
-  margin-right: 5px;
-  margin-left: 5px;
-} */
-
-/* .img-value {
-  margin-right: 5px;
-  margin-left: 5px;
-} */
-
 .body-background {
   background-image: url(./images/alexander-shatov-SXfwXS0jWNg-unsplash.jpg);
   background-size: cover;
