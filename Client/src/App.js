@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
-// import logo from './logo.svg';
+import { useState } from 'react';
 import { Routes, Route } from "react-router-dom"
 import './App.css';
 import Main from './Main';
 import Randomsearch from "./Randomsearch";
-import background from "./images/alexander-shatov-SXfwXS0jWNg-unsplash.jpg";
 
 function App() {
   const [bodyClass, setBodyClass] = useState("body-background");

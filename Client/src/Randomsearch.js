@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-// import { Link } from "react-router-dom";
 import Navbar from './Navbar';
 import robertSawyer from "./images/Robert_j_sawyer_in_2005.jpg";
 import arnold from "./images/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg";
 import arlene from "./images/Arlene_Dickinson_2021.jpg";
 import robertKiyosaki from "./images/Robert_Kiyosaki_2.jpg";
 import dalaiLama from "./images/Dalailama1.jpg";
-// import heartPicture from "./images/heart.png";
-// import reTweetPicture from "./images/retweet.png";
 import Tweet from "./components/TweetDisplay";
 
 function RandomSearch({ bodyClass, setBodyClass }) {

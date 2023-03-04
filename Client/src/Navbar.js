@@ -7,15 +7,6 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
         event.preventDefault();
         setSearchValue(event.target.value);
     }
-    // useEffect(() => {
-    //     console.log("useEffect was executed")
-    //     fetch("/api")
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setData(data)
-    //             console.log(data)
-    //         })
-    // }, []);
 
     function handleSearchButtonClick(event) {
         event.preventDefault();
