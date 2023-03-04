@@ -52,7 +52,6 @@ function RandomSearch({ bodyClass, setBodyClass }) {
         setIsSearching(true);
         setIsLoading(true);
         setRandomSearchOn(true);
-        console.log("Random person selected:", searchValue);
         fetch('/api/random_search', {
             method: 'POST',
             headers: {
@@ -65,43 +64,36 @@ function RandomSearch({ bodyClass, setBodyClass }) {
             .then(response => response.json())
             .then(data => {
                 setData([data]);
-                console.log(data);
             })
             .catch(error => {
                 console.error(error);
             });
-        console.log("Data Received")
         setIsLoading(false)
     }
 
     // Search handlers for Random search for famous people.
     const handleRobertJ = (event) => {
         event.preventDefault();
-        console.log('@RobertJSawyer random tweet will go here!');
         famouseSearchChoice = "@RobertJSawyer"
         ActualRandomSearch(famouseSearchChoice);
     };
     const handleArnold = (event) => {
         event.preventDefault();
-        console.log('@Schwarzenegger random tweet will go here!');
         famouseSearchChoice = "@Schwarzenegger"
         ActualRandomSearch(famouseSearchChoice);
     };
     const handleArlene = (event) => {
         event.preventDefault();
-        console.log('@ArleneDickinson random tweet will go here!');
         famouseSearchChoice = "@ArleneDickinson"
         ActualRandomSearch(famouseSearchChoice);
     };
     const handleKiyosaki = (event) => {
         event.preventDefault();
-        console.log('@theRealKiyosaki random tweet will go here!');
         famouseSearchChoice = "@theRealKiyosaki"
         ActualRandomSearch(famouseSearchChoice);
     };
     const handleDalai = (event) => {
         event.preventDefault();
-        console.log('@DalaiLama random tweet will go here!!');
         famouseSearchChoice = "@DalaiLama"
         ActualRandomSearch(famouseSearchChoice);
     };

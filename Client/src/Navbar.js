@@ -12,7 +12,6 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
         event.preventDefault();
         setIsSearching(true);
         setIsLoading(true);
-        console.log("Search button clicked with search value:", searchValue);
         fetch('/api/search', {
             method: 'POST',
             headers: {
@@ -25,7 +24,6 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
             .then(response => response.json())
             .then(data => {
                 setData(data);
-                console.log(data);
                 if (data.length === 0) {
                     setNoTweetsFound(true);
                 }
@@ -33,7 +31,7 @@ function NavBar({ data, setData, searchValue, setSearchValue, isSearching, setIs
             .catch(error => {
                 console.error(error);
             });
-        console.log("Data Received");
+
         setIsLoading(false);
     }
 
