@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, send_file
 import requests
 import os
 import json
@@ -9,7 +9,8 @@ from flask import jsonify
 import random
 load_dotenv()
 
-app = Flask(__name__)
+# app = Flask(__name__)
+app = Flask(__name__, static_folder='../Client/build', static_url_path='/')
 
 
 def getTweets(query):
@@ -89,7 +90,7 @@ def searchRandomTweets():
 
 @app.route("/")
 def mainExecution():
-    return render_template("../Client/public/index.html")
+    return send_file("../Client/build/index.html")
 
 
 if __name__ == "__main__":
