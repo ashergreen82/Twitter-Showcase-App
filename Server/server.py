@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 import requests
 import os
 import json
@@ -85,6 +85,11 @@ def searchRandomTweets():
     tweets = getTweets(query)
     random_tweet = random.choice(tweets)
     return random_tweet
+
+
+@app.route("/")
+def mainExecution():
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
