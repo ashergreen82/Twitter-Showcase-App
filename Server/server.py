@@ -89,7 +89,7 @@ def searchRandomTweets():
 
 @app.route("/")
 def mainExecution():
-    return render_template("../Client/build/index.html")
+    return render_template("../Client/public/index.html")
 
 
 if __name__ == "__main__":
