@@ -2,7 +2,7 @@
 
 *Grabbing Tweets from Twitter written in Javascript, HTML, CSS, and Python*
 
-You can run the program from [here](https://63df0376955c2d0c34ae0ba1--silly-brigadeiros-d326dd.netlify.app/).
+You can run the program from [here](https://twitter-showcase-app-ucxm.onrender.com).
 <br /><br />
 
 ![screenshot](screenshot.png/)
