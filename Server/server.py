@@ -93,5 +93,10 @@ def mainExecution():
     return send_file("../Client/build/index.html")
 
 
+@app.route("/Randomsearch")
+def mainRandomSearch():
+    return send_file("../Client/build/index.html")
+
+
 if __name__ == "__main__":
     app.run(debug=False)
