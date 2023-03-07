@@ -29,7 +29,9 @@ when displaying content I created a separate component for that.  This allows th
 
 This modular approach helped because having two separate pages with the search bar inside the navigation bar
 was a challenge, as many of the Main page components had to be copied for use on the Random Search page.  
-The modular approach allowed me to minimize the need for copying code.
+The modular approach allowed me to minimize the need for copying code.  Furthermore, using two separate pages
+with the search bar in the middle created a level of complexity I had not anticipated.  This required me to
+use react-router to make it work.
 
 Unfortunately this prolonged the development of my project by quite a bit as a result, but I think you’ll
 agree that the final result was worth it!
