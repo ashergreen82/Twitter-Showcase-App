@@ -35,6 +35,23 @@ use react-router to make it work.
 Unfortunately this prolonged the development of my project by quite a bit as a result, but I think you’ll
 agree that the final result was worth it!
 
+## Installation Instructions
+
+Client:
+
+1. Run "cd Client"
+2. Run "npm install"
+3. Run "npm start"
+
+Server:
+
+1. Open new Terminal
+2. From root directory, run "cd Server"
+3. Run "py -m venv server"
+4. Run "pip install -r requirements.txt"
+5. Create the .env file and include the api key: "API_KEY=XXX"
+6. Run "flask --app server --debug run"
+
 #### **Author**
 
 Asher Green - *Full Stack Developer* \
