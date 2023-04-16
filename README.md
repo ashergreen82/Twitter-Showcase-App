@@ -10,7 +10,6 @@ You can run the program from [here](https://twitter-showcase-app-ucxm.onrender.c
 
 ## **Summary**
 
-<pre>
 This is my very first time programming in two languages!!  The last project was the Star Wars API
 where everything was done on the front end.  This project gave me the opportunity to program the
 front end and the back end.
@@ -35,8 +34,6 @@ use react-router to make it work.
 
 Unfortunately this prolonged the development of my project by quite a bit as a result, but I think you’ll
 agree that the final result was worth it!
-
-</pre>
 
 #### **Author**
 
