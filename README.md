@@ -35,6 +35,8 @@ use react-router to make it work.
 Unfortunately this prolonged the development of my project by quite a bit as a result, but I think you’ll
 agree that the final result was worth it!
 
+To use the app, just enter in the search query in the search bar and press the "Search" button.  Also, please be patient as this is a demo and as such probably not being used much, so the server hosting the web site has to reactivate the app, which will take time.
+
 ## Installation Instructions
 
 Client:
